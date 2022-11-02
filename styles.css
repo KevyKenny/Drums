@@ -33,13 +33,12 @@ body{
 
   
 button {
-    outline: none;
-    height: 150px;
-    width: 150px;
+    height: 80px;
+    width: 80px;
     border: 10px ;
     border: 10px solid #515553;
     background-color: white;
-    font-size: 2cm;
+    font-size: 1.2cm;
     font-family:  'Arvo', cursive;
     text-shadow: 3px 0 rgb(223, 150, 13);
     border-radius: 15px;
