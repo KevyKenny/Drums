@@ -37,13 +37,13 @@ button {
     width: 80px;
     border: 10px ;
     border: 10px solid #515553;
-    background-color: white;
+    background-color: green;
     font-size: 1.2cm;
     font-family:  'Arvo', cursive;
     text-shadow: 3px 0 rgb(223, 150, 13);
-    border-radius: 15px;
+    border-radius: 8px;
     text-align: center;
-    margin: 10px;
+    margin: 4px;
   }
 
 span{
@@ -53,14 +53,14 @@ label{
     border: 2px 0 #077ee7;
 }
 a:hover {
-    color: #ef0f0f;
+    color: 'red';
     padding: 2px;
 }
 a{
     color: #0ad8df;
     font-family: 'Montserrat', sans-serif;
-    margin: 10px 20px;
+    margin: 18px 16px;
   }
 img{
-    width: 50px;
+    width: 30px;
 }
