@@ -1,29 +1,64 @@
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kennedy</title>
+  <title>Kennedy's Drum Kit</title>
   <link rel="stylesheet" href="styles.css">
-  <body>
-      <h1><span>Kennyman</span> Welcomes you to </h1>
-      <h1 class ="hh1" id="title">His 🥁 Kit</h1>
-      <h4>  I am in love with <span>CODING</span></h4>
-      <div class="set"></div>
-        <button class="w drum">w</button>
-        <button class="a drum">a</button>
-        <button class="d drum">d</button>
-        <button class="k drum">k</button> 
-        <button class="n drum">n</button>
-        <button class="m drum">m</button>
-      </di>
-      <div class="bottom-container">
-        <h3>My rights do not include the right to do wrong!!!</h3>
-        <p class="copyright">© 2022 09 June <span><b> <i>@ Kenny</i> </b></span>  extra time</p>
-        <label for="email">Hit my inbox-->> </label> <a href="mailto:kevykenny29@gmail.com" class="footer-link"><label>E-mail</label> </a>
-      </div>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-      <script src="java.js"></script> 
-      <marquee behavior="move" direction="left"> Kevy <img src="kenny.jpeg" alt="pic"> <span>Kenny</span>  </marquee> 
-  </body>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <h1 class="main-title">
+      <span class="highlight">Kennyman</span> Welcomes you to His
+      <span class="drum-emoji">🥁</span> Kit
+    </h1>
+    <p class="subtitle">I am in love with <span class="highlight">CODING</span></p>
+  </header>
 
+  <main class="main-content">
+    <div class="drum-kit-container">
+      <h2 class="instructions">Press the keys or click the drums to play!</h2>
+      <div class="drum-set">
+        <button class="w drum" data-key="w">
+          <span class="key-label">W</span>
+          <span class="drum-name">Tom 1</span>
+        </button>
+        <button class="a drum" data-key="a">
+          <span class="key-label">A</span>
+          <span class="drum-name">Kick</span>
+        </button>
+        <button class="d drum" data-key="d">
+          <span class="key-label">D</span>
+          <span class="drum-name">Snare</span>
+        </button>
+        <button class="k drum" data-key="k">
+          <span class="key-label">K</span>
+          <span class="drum-name">Tom 2</span>
+        </button>
+        <button class="n drum" data-key="n">
+          <span class="key-label">N</span>
+          <span class="drum-name">Tom 3</span>
+        </button>
+        <button class="m drum" data-key="m">
+          <span class="key-label">M</span>
+          <span class="drum-name">Crash</span>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <h3 class="footer-quote">My rights do not include the right to do wrong!!!</h3>
+      <p class="copyright">© 2022 09 June <span class="highlight"><strong><em>@ Kenny</em></strong></span> extra time</p>
+      <a href="mailto:kevykenny29@gmail.com" class="email-link">
+        <span class="email-icon">📧</span> Hit my inbox
+      </a>
+    </div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="java.js"></script> 
+</body>
 </html>

@@ -1,66 +1,364 @@
-h1 {
-    color:aqua;
-    text-shadow: 1px 0 grey;
-    font-size: 1.2cm;
-    font-family:'Arvo', cursive;
-}
-body{
-    text-align: center;
-    color: grey;
-    background-color: azure;
-}
-.w {
-    background-image: url("images/tom4.png");
-}
-.a{
-    background-image: url("images/kick.png");
-}
-.d{
-    background-image: url("images/snare.png");
-}
-.k{
-    background-image: url("images/tom1.png");
-}
-.n{
-    background-image: url("images/tom2.png");
-}
-.m{
-    background-image: url("images/tom3.png");
-}
-.l {
-    background-image: url("images/crash.png");
+/* Modern CSS Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+:root {
+  /* Modern Color Palette */
+  --primary-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --secondary-bg: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --accent-color: #ff6b6b;
+  --text-primary: #2c3e50;
+  --text-secondary: #7f8c8d;
+  --highlight-color: #f39c12;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --border-radius: 15px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: url('images/background.jpg') center/cover no-repeat fixed;
+  min-height: 100vh;
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Add an overlay to ensure text readability */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+/* Header Styles */
+.header {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.main-title {
+  font-family: 'Orbitron', monospace;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 900;
+  color: white;
+  text-shadow: 2px 2px 4px var(--shadow-color);
+  margin-bottom: 0.3rem;
+  letter-spacing: 1px;
+}
+
+.drum-emoji {
+  font-size: 1.2em;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+.subtitle {
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+}
+
+.highlight {
+  color: var(--highlight-color);
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Main Content */
+.main-content {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.drum-kit-container {
+  text-align: center;
+}
+
+.instructions {
+  font-family: 'Orbitron', monospace;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  color: white;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px var(--shadow-color);
+}
+
+/* Drum Set Layout */
+.drum-set {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px var(--shadow-color);
+}
+
+/* Drum Button Styles */
+.drum {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #f0f0f0, #cacaca);
+  font-family: 'Orbitron', monospace;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.2),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.drum::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.drum > * {
+  position: relative;
+  z-index: 2;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.key-label {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--highlight-color);
+  margin-bottom: 0.2rem;
+}
+
+.drum-name {
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Individual Drum Backgrounds */
+.w::before { background-image: url("images/tom4.png"); }
+.a::before { background-image: url("images/kick.png"); }
+.d::before { background-image: url("images/snare.png"); }
+.k::before { background-image: url("images/tom1.png"); }
+.n::before { background-image: url("images/tom2.png"); }
+.m::before { background-image: url("images/tom3.png"); }
+
+/* Hover and Active States */
+.drum:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 
+    0 12px 24px rgba(0, 0, 0, 0.3),
+    inset 0 2px 4px rgba(255, 255, 255, 0.4);
+}
+
+.drum:active {
+  transform: translateY(-2px) scale(0.98);
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.4),
+    inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.drum.pressed {
+  animation: drumHit 0.2s ease-in-out;
+}
+
+@keyframes drumHit {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+/* Footer Styles */
+.footer {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-quote {
+  font-family: 'Orbitron', monospace;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  color: white;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+  text-shadow: 1px 1px 2px var(--shadow-color);
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.email-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--highlight-color);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--highlight-color);
+  border-radius: 25px;
+  transition: var(--transition);
+  background: rgba(243, 156, 18, 0.1);
+}
+
+.email-link:hover {
+  background: var(--highlight-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(243, 156, 18, 0.4);
+}
+
+/* Marquee Styles */
+.marquee {
+  margin-top: 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 0;
+  border-radius: var(--border-radius);
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: scroll 20s linear infinite;
+  color: white;
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 1rem;
+  border: 2px solid var(--highlight-color);
+  object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .drum-set {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    padding: 1rem;
+  }
   
-button {
+  .drum {
     height: 80px;
     width: 80px;
-    border: 10px ;
-    border: 10px solid #515553;
-    background-color: green;
-    font-size: 1.2cm;
-    font-family:  'Arvo', cursive;
-    text-shadow: 3px 0 rgb(223, 150, 13);
-    border-radius: 8px;
-    text-align: center;
-    margin: 4px;
   }
+  
+  .key-label {
+    font-size: 1.2rem;
+  }
+  
+  .drum-name {
+    font-size: 0.5rem;
+  }
+}
 
-span{
-    text-decoration: underline;
-}
-label{
-    border: 2px 0 #077ee7;
-}
-a:hover {
-    color: 'red';
-    padding: 2px;
-}
-a{
-    color: #0ad8df;
-    font-family: 'Montserrat', sans-serif;
-    margin: 18px 16px;
+@media (max-width: 480px) {
+  .header {
+    padding: 0.8rem;
   }
-img{
-    width: 30px;
+  
+  .main-content {
+    padding: 0.8rem;
+  }
+  
+  .drum-set {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+    padding: 0.8rem;
+  }
+  
+  .drum {
+    height: 70px;
+    width: 70px;
+  }
+  
+  .key-label {
+    font-size: 1rem;
+  }
+  
+  .drum-name {
+    font-size: 0.45rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus styles for accessibility */
+.drum:focus {
+  outline: 3px solid var(--highlight-color);
+  outline-offset: 2px;
+}
+
+.email-link:focus {
+  outline: 3px solid var(--highlight-color);
+  outline-offset: 2px;
 }
