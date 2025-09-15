@@ -42,7 +42,7 @@ function initializeDrumKit() {
 function playDrum(key) {
     const audioMap = {
         'w': 'sounds/tom-1.mp3',
-        'a': 'sounds/kick-bass.mp3',
+        'a': 'sounds/tom-4.mp3',
         'd': 'sounds/snare.mp3',
         'k': 'sounds/tom-2.mp3',
         'n': 'sounds/tom-3.mp3',
