@@ -1,4 +1,4 @@
-# 🥁 Kennedy's Interactive Drum Kit
+# 🥁Interactive Drum Kit
 
 A modern, interactive virtual drum kit web application that brings the joy of drumming to your browser. Play drums using your keyboard or mouse clicks and enjoy a beautiful, responsive interface with stunning visual effects.
 
@@ -112,7 +112,7 @@ This application is perfect for:
 
 ## 🎪 Fun Facts
 
-- Created by **Kennyman** with love for coding
+- Created with love for coding
 - Features a bouncing drum emoji animation
 - Includes a scrolling marquee with the creator's photo
 - Uses modern web technologies for the best performance
@@ -123,8 +123,8 @@ This application is perfect for:
 For questions, suggestions, or just to share your beats:
 - **Email**: [kevykenny29@gmail.com](mailto:kevykenny29@gmail.com)
 
----
+-**Phone** : +263 782 186 683
 
 **Enjoy your drumming session!** 🥁✨
 
-*"My rights do not include the right to do wrong!!!"* - Kenny
+*"Our rights do not include the right to do wrong!!!"* 
